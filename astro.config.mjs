@@ -23,7 +23,7 @@ export default defineConfig({
           autogenerate: { directory: "reference" },
         },
       ],
-      routeMiddleware: "./src/middleware.ts",
+      routeMiddleware: "./src/routeData.ts",
     }),
   ],
 });
