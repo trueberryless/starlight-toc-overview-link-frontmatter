@@ -1,6 +1,7 @@
 // @ts-check
 import { defineConfig } from "astro/config";
 import starlight from "@astrojs/starlight";
+import starlightTocOverviewCustomizer from "starlight-toc-overview-customizer";
 
 // https://astro.build/config
 export default defineConfig({
@@ -23,7 +24,11 @@ export default defineConfig({
           autogenerate: { directory: "reference" },
         },
       ],
-      routeMiddleware: "./src/routeData.ts",
+      plugins: [
+        starlightTocOverviewCustomizer({
+          overviewTitle: "Back to top",
+        }),
+      ],
     }),
   ],
 });
